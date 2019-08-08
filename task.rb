@@ -16,9 +16,7 @@ class Station
   end
 
   def trains_by_type(type)
-    trains_result = []
-    trains.each { |train| trains_result.push(train) if train.type == type } 
-    return trains_result
+    return trains.collect { |train|  train if train.type == type }  
   end
 end
 
